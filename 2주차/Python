@@ -1,0 +1,19 @@
+coin, exchange = map(int, input().split())
+
+coinType = []
+count = 0
+
+
+for i in range(coin):
+    num = int(input())
+    coinType.append(num)
+
+coinType.reverse()
+
+for i in range(len(coinType)):
+    if exchange >= coinType[i]:
+        count += exchange //coinType[i]
+        exchange %= coinType[i]
+        
+
+print(count)
