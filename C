@@ -1,19 +1,14 @@
-coin, exchange = map(int, input().split())
+#include<stdio.h>
 
-coinType = []
-count = 0
-
-
-for i in range(coin):
-    num = int(input())
-    coinType.append(num)
-
-coinType.reverse()
-
-for i in range(len(coinType)):
-    if exchange >= coinType[i]:
-        count += exchange //coinType[i]
-        exchange %= coinType[i]
-        
-
-print(count)
+int main() {
+	int i, coin, result = 0, exchange, coinType[11]; 
+	scanf("%d %d", &coin, &exchange);
+	for (i = 1; i <= coin; i++){
+	    scanf("%d", &coinType[i]);
+	}
+	for (i = coin; i > 0; i--) {
+		result += exchange / coinType[i];
+		exchange %= coinType[i];
+	}
+	printf("%d", result);
+}
