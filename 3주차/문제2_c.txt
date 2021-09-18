@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char str[20];
+	scanf("%s", str);
+
+	int size = strlen(str);
+	char ch1;
+	char * ptr = &ch1;
+	int sum = 1;
+
+	for (int i = 0; i < size; i++) {
+		ch1 = str[i];
+		if(atoi(ptr) != 0){
+			sum *= atoi(ptr);
+		}
+	}
+
+	printf("%d",sum);
+	
+}
+  
