@@ -1,0 +1,13 @@
+data = list(map(int,input()))
+
+result = 1
+
+for i in range(len(data)-1):
+	if(data[i] == 0):
+		del data[i]
+		
+
+for i in range(len(data)):
+	result *= data[i]
+
+print(result)
