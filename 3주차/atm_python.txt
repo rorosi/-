@@ -1,0 +1,8 @@
+n = int(input())
+atm = list(map(int, input().split()))
+num = 0
+atm.sort()
+for i in range(n):
+    for j in range(i + 1):
+        num += atm[j]
+print(num)
