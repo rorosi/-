@@ -1,0 +1,30 @@
+#include <stdio.h>
+int result = 0;
+int result2 = 0;
+int temp = 0;
+int i,j;
+int main(void) {
+int n;
+scanf("%d", &n);
+
+int atm[1000];
+for(i = 0; i < n; i++){
+    scanf("%d", &atm[i]);
+}
+
+for (i = 0; i < n; i++) {
+	for (j = 0; j < (n - 1) - i; j++) {
+		if (atm[j] > atm[j + 1]) {
+			temp = atm[j];
+			atm[j] = atm[j + 1];
+			atm[j + 1] = temp;
+		}
+	}
+}
+
+for (i = 0; i< n; i++){
+    result += atm[i];
+    result2 += result;
+}
+printf("%d",result2);
+}
