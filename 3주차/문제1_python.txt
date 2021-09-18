@@ -1,0 +1,14 @@
+n, num = map(int, input().split())
+count = 0
+
+while(1):
+	if(n % num == 0):
+		n /= num
+	else:
+		n -= 1
+	count = count + 1
+	if(n < num):
+		break
+		
+count += (n-1)
+print(int(count))
