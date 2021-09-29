@@ -1,0 +1,12 @@
+arr = [6,0,8,2,3,0,4,0,1]
+arr2 = []
+j = 0
+
+for i in range(0, len(arr)):
+    if arr[i] != 0 :
+        arr2.append(arr[i])
+
+for i in range(len(arr2), len(arr)):
+    arr2.append(0)
+
+print(arr2)
