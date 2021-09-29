@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j;
+    int arr[9] = {6,0,8,2,3,0,4,0,1};
+    int arr2[9];
+    int temp;
+    
+    for(i = 0; i < sizeof(arr)/sizeof(int); i++){
+            if(arr[i] != 0){
+                arr2[j] = arr[i];
+                j = j + 1;
+            }
+    }
+    
+    for (int i = j; i < sizeof(arr)/sizeof(int); i++)
+        arr2[i] = 0;
+        
+    for(i = 0; i < sizeof(arr)/sizeof(int); i++){
+        printf("%d ", arr2[i]);
+    }
+    
+
+    return 0;
+}
