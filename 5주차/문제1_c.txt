@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+
+int n;
+char plans[20];
+char *arr[10] = {NULL, };
+
+
+int i = 0;
+int x = 1, y = 1;
+
+int dx[4] = {0, 0, -1, 1};
+int dy[4] = {-1, 1, 0, 0};
+char moveTypes[4] = {'L', 'R', 'U', 'D'};
+
+int main(void) {
+    scanf("%d", &n);
+    scanf(" %[^n]s", plans);
+    
+    char *ptr = strtok(plans, " ");
+    
+    while (ptr != NULL)
+    {
+        arr[i] = ptr;
+        i++;
+        ptr = strtok(NULL, " ");
+    }
+
+    for (int i = 0; i < strlen(arr); i++){
+        if(*arr[i] == 'L'){
+            y -= 1;
+            if(y == 0) y += 1;
+        }else if(*arr[i] == 'R'){
+            y += 1;
+            if(y == n+1) y -= 1;
+        }else if(*arr[i] == 'U'){
+            x -= 1;
+            if(x == 0) x += 1;
+        }else if(*arr[i] == 'D'){
+            x += 1;
+            if(x == n+1) x -= 1;
+        }
+    }
+    
+    printf("%d %d", x,y);
+}
