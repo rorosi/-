@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdbool.h>
+#define MAX 100
+bool visited[9];
+int graph[9][3] = {{}, {2,3,8}, {1,7}, {1,4,5}, {3,5}, {3,4}, {7}, {2,6,8}, {1,7}};
+int queue[MAX];
+
+void bfs (int v) {
+	int front = 0, rear = 0;
+	queue[rear] = v;
+	rear++;
+	visited[v] = true;
+	printf("%d ", v);
+	
+	while (front < rear) {
+		int pop = queue[front];
+		front++;
+		for (int i = 0; i < 3; i++) {
+            int value = graph[pop][i];
+            if(!visited[value] && graph[pop][i]){
+                visited[value] = true;
+                queue[rear]=value;
+                rear++;
+                printf("%d ", value);
+                
+            }
+		}
+	}
+}
+
+
+int main(void){
+    bfs(1);
+}
