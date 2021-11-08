@@ -1,0 +1,12 @@
+n = int(input())
+
+def isEven(num):
+    if (num^1) == (n+1):
+        return 1
+    else:               
+        return 0
+
+if isEven(n) == 1:
+    print("Even")
+else:
+    print("Odd")
